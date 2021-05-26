@@ -1,0 +1,24 @@
+{
+    "name": "@node-red/flow-parser",
+    "version": "1.0.0",
+    "description": "Parser Utility for Node-RED Flow JSON",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "npx mocha ./test/test.js",
+        "docs": "npx jsdoc -c ./jsdoc.json -d docs lib"
+    },
+    "keywords": [],
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "jsdoc": "^3.6.7",
+        "mocha": "^8.4.0"
+    },
+    "contributors": [
+        {
+            "name": "Nick O'Leary"
+        },
+        {
+            "name": "Kunihiko Toumura"
+        }
+    ]
+}
