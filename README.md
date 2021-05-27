@@ -36,21 +36,34 @@ configuration in a reasonably well-defined order:
    - Groups
 
 ```
-const flow = parseFlow(exampleFlow);
+const fs = require("fs");
+const FlowParser = require("@node-red/flow-parser");
 
-flow.walk(obj => {
-    if (obj.type === 'tab') {
-        // A flow object
-    } else if (obj.type === 'subflow') {
-        // A subflow definition
-    } else if (obj.type === 'group') {
-        // A group object
-    } else if (obj.constructor.name === 'NRConfigNode') {
-        // A config node
-    } else {
-        // A flow node
+// Load the flow json from a local file and parse to an object
+const exampleFlow = JSON.parse(fs.readFileSync("flows.json", "utf-8"));
+
+const flow = FlowParser.parseFlow(exampleFlow);
+
+flow.walk(function(obj) {
+    switch(obj.TYPE) {
+        case FlowParser.types.Flow:
+            // A flow object
+            break;
+        case FlowParser.types.Subflow:
+            // A subflow definition
+            break;
+        case FlowParser.types.Group:
+            // A group object
+            break;
+        case FlowParser.types.ConfigNode:
+            // A config node
+            break;
+        case FlowParser.types.Node:
+            // A flow node
+            break;
     }
 })
+
 ```
 
 **TODO:** Add a better way to distinguish the object types
