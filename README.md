@@ -26,14 +26,14 @@ The `walk` function can be used to invoke a function on every object in the flow
 configuration in a reasonably well-defined order:
 
  - Subflow definitions
-   - Nodes
    - Config nodes scoped to this subflow
    - Groups
+   - Nodes
  - Global Config nodes
  - Flows
-   - Nodes
    - Config nodes scoped to this flow
    - Groups
+   - Nodes
 
 ```
 const fs = require("fs");

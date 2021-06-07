@@ -1,6 +1,6 @@
 const fs = require("fs");
 const assert = require("assert");
-const fp = require("../lib/index.js");
+const FlowParser = require("../lib/index.js");
 
 describe("Flow Parser tests", function() {
     it('passes flow 1', function() {
@@ -12,20 +12,33 @@ describe("Flow Parser tests", function() {
 
     function runTests(filename) {
         const original = JSON.parse(fs.readFileSync(filename,"utf-8"));
-        const flowSet = fp.parseFlow(original);
+        const flowSet = FlowParser.parseFlow(original);
         const generated = flowSet.export();
 
+
+
         // flowSet.walk(function(obj) {
-        //     if (obj.type === 'tab') {
-        //         console.log("FLOW",obj.type)
-        //     } else if (obj.type === 'subflow') {
-        //         console.log("SUBFLOW",obj.type)
-        //     } else if (obj.type === 'group') {
-        //         console.log("GROUP",obj.type)
-        //     } else if (obj.constructor.name === 'NRConfigNode') {
-        //         console.log("CONFIG NODE",obj.type)
-        //     } else {
-        //         console.log("NODE",obj.type)
+        //     switch(obj.TYPE) {
+        //         case FlowParser.types.Flow:
+        //             // A flow object
+        //             console.log("FLOW",obj.id)
+        //             break;
+        //         case FlowParser.types.Subflow:
+        //             // A subflow definition
+        //             console.log("SUBFLOW",obj.id)
+        //             break;
+        //         case FlowParser.types.Group:
+        //             // A group object
+        //             console.log(" Group",obj.id)
+        //             break;
+        //         case FlowParser.types.ConfigNode:
+        //             // A config node
+        //             console.log(" ConfigNode",obj.id)
+        //             break;
+        //         case FlowParser.types.Node:
+        //             // A flow node
+        //             console.log(" Node",obj.id)
+        //             break;
         //     }
         // })
 
