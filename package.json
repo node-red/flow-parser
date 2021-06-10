@@ -1,13 +1,17 @@
 {
     "name": "@node-red/flow-parser",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Parser Utility for Node-RED Flow JSON",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/node-red/flow-parser.git"
+    },
     "main": "lib/index.js",
     "scripts": {
         "test": "npx mocha ./test/test.js",
         "docs": "npx jsdoc -c ./jsdoc.json -d docs -R README.md lib"
     },
-    "keywords": [],
+    "keywords": ["node-red"],
     "license": "Apache-2.0",
     "devDependencies": {
         "jsdoc": "^3.6.7",
