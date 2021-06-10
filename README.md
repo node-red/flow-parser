@@ -66,8 +66,6 @@ flow.walk(function(obj) {
 
 ```
 
-**TODO:** Add a better way to distinguish the object types
-
 ### Example - `export`
 
 The `export` function gives back the JSON array for the flow.

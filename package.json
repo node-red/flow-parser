@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "scripts": {
         "test": "npx mocha ./test/test.js",
-        "docs": "npx jsdoc -c ./jsdoc.json -d docs lib"
+        "docs": "npx jsdoc -c ./jsdoc.json -d docs -R README.md lib"
     },
     "keywords": [],
     "license": "Apache-2.0",
