@@ -2,3 +2,5 @@ docs
 .DS_Store
 node_modules
 .nyc_output
+coverage
+package-lock.json
