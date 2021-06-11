@@ -8,13 +8,18 @@
     },
     "main": "lib/index.js",
     "scripts": {
-        "test": "npx mocha ./test/test.js",
+        "test": "nyc mocha",
+        "coverage": "nyc report --reporter=lcov",
         "docs": "npx jsdoc -c ./jsdoc.json -d docs -R README.md lib"
     },
-    "keywords": ["node-red"],
+    "keywords": [
+        "node-red"
+    ],
     "license": "Apache-2.0",
     "devDependencies": {
         "jsdoc": "^3.6.7",
+        "coveralls": "^3.1.0",
+        "nyc": "^15.1.0",
         "mocha": "^8.4.0"
     },
     "contributors": [
