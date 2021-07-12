@@ -10,6 +10,7 @@
     "scripts": {
         "test": "nyc mocha",
         "coverage": "nyc report --reporter=lcov",
+        "coverage-html": "nyc report --reporter=html",
         "docs": "npx jsdoc -c ./jsdoc.json -d docs -R README.md lib"
     },
     "keywords": [
